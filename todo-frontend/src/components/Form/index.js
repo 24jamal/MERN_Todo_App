@@ -1,10 +1,10 @@
 import React from 'react'
 import { FormContainer, Input, Button } from './styles'
-const Form = () => {
+const Form = ({ input, setInput }) => {
     return (
         <FormContainer>
             <Input
-                value=""
+                value={input} onChange={(e) => { setInput(e.target.value) }}
                 type="text"
                 role="input"
             />
