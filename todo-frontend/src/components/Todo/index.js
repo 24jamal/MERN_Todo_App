@@ -25,15 +25,23 @@ const Todo = () => {
         fetchData()
     }, []);
 
-    const addTodo = async () => {
-        console.log('addedTodo');
+    const addTodo = async (e) => {
+        e.preventDefault();
+        if (input.length === 0) return null;
+        await axios.post('/todos', [{
+            ...todos,
+            text: input,
+            completed: false
+        }])
+        fetchData();
+        setInput('');
     }
 
     return (
         <Container>
             <h2>List of Todos</h2>
             {/* Form component*/}
-            <Form input={input} setInput={setInput} />
+            <Form input={input} setInput={setInput} addTodo={addTodo} />
 
             {/* TodoList */}
 

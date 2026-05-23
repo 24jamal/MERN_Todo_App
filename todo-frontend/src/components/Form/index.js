@@ -1,6 +1,6 @@
 import React from 'react'
 import { FormContainer, Input, Button } from './styles'
-const Form = ({ input, setInput }) => {
+const Form = ({ input, setInput, addTodo }) => {
     return (
         <FormContainer>
             <Input
@@ -8,7 +8,7 @@ const Form = ({ input, setInput }) => {
                 type="text"
                 role="input"
             />
-            <Button type="submit">Add</Button>
+            <Button type="submit" onClick={(e) => addTodo(e)}>Add</Button>
         </FormContainer>
     )
 }
