@@ -38,7 +38,7 @@ const updateTodo = async (req, res) => {
 
         //Check the id is valid'
         if (!mongoose.Types.ObjectId.isValid(id)) {
-            return res.status(404).send(`There is todo with  the id of  ${}"`);
+            return res.status(404).send(`There is todo with  the id of  ${id}`);
         }
 
         const todoID = { _id: id };
