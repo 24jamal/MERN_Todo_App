@@ -12,6 +12,9 @@ const {
     deleteTodo
 } = require("./controllers/todoController");
 
+const { register, login } = require("./controllers/authController");
+const authMiddleware = require("./middleware/auth");
+
 //App Config
 
 const app = express();
@@ -47,12 +50,16 @@ app.get("/", (req, res) => {
     res.status(200).json({ message: "Backend is running" });
 });
 
-// API endpoints
+// Auth endpoints
+app.post("/auth/register", register);
+app.post("/auth/login", login);
 
-app.get("/todos", getTodos);
+// API endpoints (protected with auth middleware)
 
-app.post("/todos", createTodo);
+app.get("/todos", authMiddleware, getTodos);
 
-app.put("/todos/:id", updateTodo);
+app.post("/todos", authMiddleware, createTodo);
 
-app.delete("/todos/:id", deleteTodo);
+app.put("/todos/:id", authMiddleware, updateTodo);
+
+app.delete("/todos/:id", authMiddleware, deleteTodo);
