@@ -35,20 +35,6 @@ function App() {
     setCurrentPage('login');
   };
 
-  const handleLoginSuccess = () => {
-    setIsLoggedIn(true);
-    setCurrentPage('todos');
-    const user = JSON.parse(localStorage.getItem('user'));
-    setUserEmail(user.email);
-  };
-
-  const handleRegisterSuccess = () => {
-    setIsLoggedIn(true);
-    setCurrentPage('todos');
-    const user = JSON.parse(localStorage.getItem('user'));
-    setUserEmail(user.email);
-  };
-
   if (loading) {
     return <div>Loading...</div>;
   }

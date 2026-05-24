@@ -72,9 +72,13 @@ const Link = styled.p`
   margin-top: 20px;
   color: #666;
 
-  a {
+  button {
+    background: none;
+    border: none;
+    padding: 0;
     color: #4CAF50;
     cursor: pointer;
+    font: inherit;
     text-decoration: none;
 
     &:hover {
@@ -161,7 +165,7 @@ const Login = ({ onSwitchToRegister }) => {
                 </form>
 
                 <Link>
-                    Don't have an account? <a onClick={onSwitchToRegister}>Register here</a>
+                    Don't have an account? <button type="button" onClick={onSwitchToRegister}>Register here</button>
                 </Link>
             </FormContainer>
         </Container>
