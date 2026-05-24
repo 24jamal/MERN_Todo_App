@@ -4,15 +4,17 @@ const todoSchema = mongoose.Schema(
     {
         text: {
             type: String,
-            required: true
+            required: true,
         },
         completed: {
             type: Boolean,
-            required: true
+            required: true,
         },
-        timestamps: true
-
+    },
+    {
+        timestamps: true,
     }
-)
+);
 
 module.exports = mongoose.model("todos", todoSchema);
+

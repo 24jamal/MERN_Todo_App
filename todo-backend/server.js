@@ -30,7 +30,7 @@ app.use(Cors());
 
 mongoose.connect(connectionURL)
     .then(() => {
-        app.listen(port, () => console.log("Running on port : ${port}"))
+        app.listen(port, () => console.log(`Running on port : ${port}`))
     })
     .catch((err) => {
         console.log(err);
