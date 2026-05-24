@@ -23,7 +23,7 @@ const connectionURL = process.env.MONGO_URI;
 
 app.use(express.json());
 app.use(Cors({
-    origin: ['https://mern-todo-app-gfmp.vercel.app', 'http://localhost:3000'],
+    origin: ['https://mern-todo-app-blush-ten.vercel.app/', 'https://mern-todo-app-blush-ten.vercel.app', 'https://mern-todo-app-gfmp.vercel.app', 'http://localhost:3000'],
     credentials: true
 }));
 
